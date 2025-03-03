@@ -1,0 +1,25 @@
+// バージョン定義
+syntax = "proto3";
+
+// パッケージ定義
+package count;
+
+// option go_package = "./pb";
+
+// サービスとRPCメソッド定義
+service CountService {
+  // Unary RPCメソッド
+  // カウントを1増やして返す
+  rpc Increment (CountRequest) returns (CountResponse);
+}
+
+// リクエスト型
+message CountRequest {
+  // 空でも可
+}
+
+// レスポンス型
+message CountResponse {
+  // カウントの値（int型）
+  int32 count = 1;
+}
